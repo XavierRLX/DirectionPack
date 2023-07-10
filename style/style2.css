@@ -1,0 +1,86 @@
+* SQUARED THREE */
+
+#remember > .squaredThree > input[type=checkbox] {
+	visibility: hidden;
+}
+
+.squaredThree {
+	position: relative;
+    margin-right: 30px;
+    margin-left: -10px;
+}
+
+.squaredThree label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	border-radius: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgb(241, 231, 231), 0px 1px 0px rgb(255, 255, 255);
+	-moz-box-shadow: inset 0px 1px 1px rgb(255, 254, 254), 0px 1px 0px rgb(255, 255, 255);
+	box-shadow: inset 0px 1px 1px rgb(230, 223, 223), 0px 1px 0px rgb(255, 255, 255);
+
+	background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%, #ffffff 100%);
+	background: -moz-linear-gradient(top, rgb(255, 255, 255) 0%, #ffffff 100%);
+	background: -o-linear-gradient(top, rgb(236, 231, 231) 0%, #ffffff 100%);
+	background: -ms-linear-gradient(top, rgb(255, 255, 255) 0%, #ffffff 100%);
+	background: linear-gradient(top, rgb(255, 255, 255) 0%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+.squaredThree label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #000000;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=0);
+	opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.girar360 {
+    animation: girar 30s linear infinite;
+}
+
+
+
+@keyframes subirDescer {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+
+.sobeDesce {
+    animation: subirDescer 2s ease-in-out infinite;
+}
