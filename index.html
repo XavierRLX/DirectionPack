@@ -15,7 +15,7 @@
            </div>
     </header>
     <main class="centerObject">
-        <section  class="imgMain">
+        <section id="divImgMainEdit"  class="imgMain">
             <!-- <img id="img_0" src="img/1059717.png" alt=""> -->
             <div class="ondas" style="overflow: hidden;">
                 <svg
@@ -37,42 +37,91 @@
               <img id="img_2" class="sobeDesce" src="img/drawkit-transport-scene-11.png" alt="">
               </div>
         </section>
-        <section class="loginMain">
-            <div class="divloginMain">
-                <h1>Welcome back!</h1>
-                <form id="login">
-                    <div class="GroupInputs">
-                      <div class="GroupInput">
-                          <label for="" id="labelEmail"></label>Email <br>
-                          <input type="email" name="UserLogin" id="inputEmail" required>
-                      </div>
-                      <div class="GroupInput">
-                          <label for="showPassword" id="labelPass"></label>Password <br>
-                          <input type="password" id="inputPass" required>
-                        </div>
-                    </div>
-                      <div class="eyesView">
-                        <p id="showPasswordButton">View Password</p>
-                      </div>
-                      <br>
-                    <div class="rememberAndForgot flex">
-                        <div id="remember">
-                            <div class="squaredThree">
-                                <input type="checkbox" value="None" id="squaredThree" name="check" />
-                                <label for="squaredThree"></label>
+        <sectio id="divLoginMainUp" class="loginMain ">
+            <div id="logMainUm">
+                <div id="IdDivLogMain" class="divloginMain">
+                    <h1>Welcome back !</h1>
+                    <form id="login">
+                        <div class="GroupInputs">
+                          <div class="GroupInput">
+                              <label for="" id="labelEmail"></label>Email <br>
+                              <input type="email" name="UserLogin" id="inputEmail" required>
+                          </div>
+                          <div class="GroupInput">
+                              <label for="showPassword" id="labelPass"></label>Password <br>
+                              <input type="password" id="inputPass" required>
                             </div>
-                            <p>Remember me</p>
                         </div>
-                        <p>Forgot your password?</p>
-                    </div> 
-                    <button id="btnLogin">Login</button>
-                </form>
-               
+                          <div class="eyesView">
+                            <p id="showPasswordButton">View Password</p>
+                          </div>
+                          <br>
+                        <div class="rememberAndForgot flex">
+                            <div id="remember">
+                                <div class="squaredThree">
+                                    <input type="checkbox" value="None" id="squaredThree" name="check" />
+                                    <label for="squaredThree"></label>
+                                </div>
+                                <p>Remember me</p>
+                            </div>
+                            <p><a href="#">Forgot your password?</a></p>
+                        </div>
+                        <div class="singIn">
+                            <p>don't have login?<span id="aSingUp"> SingUp</span></p>
+                        </div>
+                        <div class="divbtnLogin"><button id="btnLogin">Login</button></div>
+                    </form>
+                </div>
             </div>
-        </section>
-        <script src="JavaScript/ViewPassword.js"></script>
+            <div id="logMainDois">
+                <div id="IdDivLogMain" class="divloginMain">
+                    <h1>SingUp !</h1>
+                    <form id="login">
+                        <div class="GroupInputs">
+                          <div class="GroupInput">
+                              <label for="" id="labelNome"></label>Name <br>
+                              <input type="text" id="inputName" required>
+                          </div>
+                          <div class="GroupInput">
+                              <label for="showPassword" id="labelLastName"></label>LastName <br>
+                              <input type="text" id="inputLastname" required>
+                          </div>
+                          <div class="GroupInput">
+                            <label for="showPassword" id="labelUserName"></label>UserName<br>
+                            <input type="text" id="inputUserName" required>
+                        </div>
+                          <div class="GroupInput">
+                            <label for="" id="labelEmail"></label>Email <br>
+                            <input type="email" name="UserLogin" id="inputEmail" required>
+                        </div>
+                        <div class="GroupInput">
+                            <label for="showPassword" id="labelPass"></label>Password <br>
+                            <input type="password" id="inputPass" required>
+                        </div>
+                        <div class="GroupInput">
+                            <label for="showPassword" id="labelPass"></label>Password again <br>
+                            <input type="password" id="inputPass" required>
+                        </div>
+                        
+                        </div>
+                          <div class="eyesView">
+                            <p id="showPasswordButton">View Password</p>
+                          </div>
+                          <br>
+                        <div class="divbtnLogin">
+                            <button id="btnRegister">register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+        </sectio>
+        
     </main>
     <footer></footer>
+    <script src="JavaScript/ViewPassword.js"></script>
 </body> 
 </html>
-
