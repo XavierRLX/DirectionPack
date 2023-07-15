@@ -165,14 +165,38 @@
     letter-spacing: 1px;
   }
   button:hover {
-    background-color: #58c1eb;
-    color: #f0c60b;
+    background-color: #c5a61b;
     transition: .5s;
   }
   .centerObject .loginMain #logMainDois {
     display: none;
     transition: .5s;
   }
+  .DonthaveUsername{
+    width: 100%;
+    text-align: center ;
+    margin-top: 30px;
+    color: #fff;
+    cursor: default;
+  }
+  .DonthaveUsername span{
+    cursor: pointer;
+    font-weight: 900;
+  }
+  #clickwhere2{
+    font-weight: 900;
+    color: #0d91c5;
+  }
+  .DonthaveUsername span:hover{
+    color: #e9c422;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
   @media screen and (min-width: 548px){
     .centerObject .loginMain {
         height: 60%;
@@ -188,5 +212,5 @@
     }
     .centerObject .GroupInput {
         width: 80%;
-    }
+    } 
   }

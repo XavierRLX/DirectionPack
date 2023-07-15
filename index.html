@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/styleall.css">
     <link rel="stylesheet" href="style/style2.css">
+    <link rel="stylesheet" href="style/styleModal.css">
     <title>Login</title>
 </head>
 <body>
     <header>
        <div class="logoTipo">
             <h1>Direction Pack</h1>
-           </div>
+        </div>
     </header>
     <main class="centerObject">
         <section id="divImgMainEdit"  class="imgMain">
@@ -37,14 +38,14 @@
               <img id="img_2" class="sobeDesce" src="img/drawkit-transport-scene-11.png" alt="">
               </div>
         </section>
-        <sectio id="divLoginMainUp" class="loginMain ">
+        <section id="divLoginMainUp" class="loginMain ">
             <div id="logMainUm">
                 <div id="IdDivLogMain" class="divloginMain">
                     <h1>Welcome back !</h1>
                     <form id="login">
                         <div class="GroupInputs">
                           <div class="GroupInput">
-                              <label for="" id="labelEmail"></label>Email <br>
+                              <label for="" id="labelEmail"></label>Username <br>
                               <input type="email" name="UserLogin" id="inputEmail" required>
                           </div>
                           <div class="GroupInput">
@@ -67,7 +68,7 @@
                             <p><a href="#">Forgot your password?</a></p>
                         </div>
                         <div class="singIn">
-                            <p>don't have login?<span id="aSingUp"> SingUp</span></p>
+                            <p>don't have Username?<span id="aSingUp"> Sing Up</span></p>
                         </div>
                         <div class="divbtnLogin"><button id="btnLogin">Login</button></div>
                     </form>
@@ -75,53 +76,63 @@
             </div>
             <div id="logMainDois">
                 <div id="IdDivLogMain" class="divloginMain">
-                    <h1>SingUp !</h1>
-                    <form id="login">
+                    <h1>Register !</h1>
+                    <form id="loginMainDois" onsubmit="return validateForm()" novalidate>
                         <div class="GroupInputs">
                           <div class="GroupInput">
-                              <label for="" id="labelNome"></label>Name <br>
-                              <input type="text" id="inputName" required>
+                            <label for="inputNameMainDois" id="labelNomeMainDois"></label>Name <br>
+                            <input type="text" id="inputNameMainDois" required>
                           </div>
                           <div class="GroupInput">
-                              <label for="showPassword" id="labelLastName"></label>LastName <br>
-                              <input type="text" id="inputLastname" required>
+                            <label for="inputLastnameMainDois" id="labelLastNameMainDois"></label>LastName <br>
+                            <input type="text" id="inputLastnameMainDois" required>
                           </div>
                           <div class="GroupInput">
-                            <label for="showPassword" id="labelUserName"></label>UserName<br>
-                            <input type="text" id="inputUserName" required>
-                        </div>
-                          <div class="GroupInput">
-                            <label for="" id="labelEmail"></label>Email <br>
-                            <input type="email" name="UserLogin" id="inputEmail" required>
-                        </div>
-                        <div class="GroupInput">
-                            <label for="showPassword" id="labelPass"></label>Password <br>
-                            <input type="password" id="inputPass" required>
-                        </div>
-                        <div class="GroupInput">
-                            <label for="showPassword" id="labelPass"></label>Password again <br>
-                            <input type="password" id="inputPass" required>
-                        </div>
-                        
-                        </div>
-                          <div class="eyesView">
-                            <p id="showPasswordButton">View Password</p>
+                            <label for="inputUserNameMainDois" id="labelUserNameMainDois"></label>UserName<br>
+                            <input type="text" id="inputUserNameMainDois" required>
                           </div>
-                          <br>
+                          <div class="GroupInput">
+                            <label for="inputEmailMainDois" id="labelEmailMainDois"></label>Email <br>
+                            <input type="email" name="UserLogin" id="inputEmailMainDois" required>
+                          </div>
+                          <div class="GroupInput">
+                            <label for="inputPassMainDois" id="labelPassMainDois"></label>Password <br>
+                            <input type="password" id="inputPassMainDois" required>
+                          </div>
+                          <div class="GroupInput">
+                            <label for="inputPassMainDoisAgain" id="labelPassMainDoisAgain"></label>Password again <br>
+                            <input type="password" id="inputPassMainDoisAgain" required>
+                          </div>
+                        </div>
+                        <div class="eyesView">
+                          <p id="showPasswordButtonMainDois">View Password</p>
+                        </div>
+                        <br>
                         <div class="divbtnLogin">
-                            <button id="btnRegister">register</button>
+                          <button id="btnSave">Save</button>
                         </div>
-                    </form>
+                      </form>
+                    <div class="DonthaveUsername">
+                        <p >Do you have a username? <span id="clickWhere" onclick="desfazerAcoes()"> Sing In </span></p>
+                    </div>
                 </div>
             </div>
-
-
-
-
-        </sectio>
-        
+        </section>
     </main>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>Alert !</h2>
+      <p id="avisoForm">Seu aviso aqui...</p>
+      <div><button onclick="closeModal()">OK</button></div>
+    </div>
+  </div>
+
     <footer></footer>
-    <script src="JavaScript/ViewPassword.js"></script>
+    <script src="JavaScript/FormSingIn.js"></script>
+    <script src="JavaScript/FormSingUp.js"></script>
+    <script src="JavaScript/FormStyle.js"></script>
+    <script src="JavaScript/modal.js"></script>
 </body> 
 </html>
+  
