@@ -54,6 +54,3 @@ function LoginMain(){
     divImgMainUp.style.height = ''; // Remove a altura definida anteriormente
   }
   
-  document.getElementById('botaoDesfazer').addEventListener('click', function() {
-    desfazerAcoes();
-  });

@@ -15,120 +15,250 @@ showPasswordButtonMainDois.addEventListener('click', function(){
   }
 });
 
-// Validation Forms SingUp
+//
+function openModal(message) {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+  var modalContent = document.getElementById("modalContent");
+  modalContent.innerText = message;
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function showError(inputElement, message) {
+  inputElement.classList.add("error");
+  openModal(message);
+}
+
+function clearError(inputElement) {
+  inputElement.classList.remove("error");
+}
 
 function validateForm() {
+  var nameInput = document.getElementById("inputNameMainDois");
+  var nameLabel = document.getElementById("labelNomeMainDois");
+  var lastnameInput = document.getElementById("inputLastnameMainDois");
+  var lastLameLabel = document.getElementById("labelLastNameMainDois");
+  var userNameInput = document.getElementById("inputUserNameMainDois");
+  var userNameLabel = document.getElementById("labelUserNameMainDois");
+  var emailInput = document.getElementById("inputEmailMainDois");
+  var emailLabel = document.getElementById("labelEmailMainDois");
+  var passwordInput = document.getElementById("inputPassMainDois");
+  var passwordLabel = document.getElementById("labelPassMainDois");
+  var passwordAgainInput = document.getElementById("inputPassMainDoisAgain");
+  var passwordAgainLabel = document.getElementById("labelPassMainDoisAgain");
+  var pModal = document.getElementById("avisoForm");
 
-    // Check if the name field is empty.
-    var name = document.getElementById("inputNameMainDois").value;
-    var nameLabel = document.getElementById("labelNomeMainDois");
-    var pModal = document.getElementById("avisoForm");
-    if (name == "") {
-      openModal();
-      nameLabel.innerText = "* ";
-      pModal.innerText = "The name field must not be empty."
-      nameLabel.style.color = "red";
-      return false;
-    } else {
-      nameLabel.innerText = "";
-      nameLabel.style.color = "initial";
-    }
+  clearError(nameLabel);
+  clearError(lastLameLabel);
+  clearError(userNameLabel);
+  clearError(emailLabel);
+  clearError(passwordLabel);
+  clearError(passwordAgainLabel);
 
+  if (nameInput.value.trim() === "") {
+    showError(nameLabel, "The name field must not be empty.");
+    return false;
+  }
 
-    // Check if the lastname field is empty.
-    var lastname = document.getElementById("inputLastnameMainDois").value;
-    var lastLameLabel = document.getElementById("labelLastNameMainDois");
-    if (lastname == "") {
-      openModal();
-      lastLameLabel.innerText = "* ";
-      pModal.innerText = "The lastname field must not be empty."
-      lastLameLabel.style.color = "red";
-      return false;
-    } else {
-      lastLameLabel.innerText = "";
-      lastLameLabel.style.color = "initial";
-    }
+  if (lastnameInput.value.trim() === "") {
+    showError(lastLameLabel, "The lastname field must not be empty.");
+    return false;
+  }
 
+  var userName = userNameInput.value.trim();
+  if (userName === "") {
+    showError(userNameLabel, "The Username field must not be empty.");
+    return false;
+  } else if (userName.length < 6 || userName.length > 12) {
+    showError(userNameLabel, "The username must be between 6 and 12 characters.");
+    return false;
+  } else if (/^\d+$/.test(userName)) {
+    showError(userNameLabel, "The username must not contain numbers.");
+    return false;
+  } else if (/\s/.test(userName)) {
+    showError(userNameLabel, "The username must not contain spaces.");
+    return false;
+  }
 
-   // Check if the Username field is empty.
-var userName = document.getElementById("inputUserNameMainDois").value;
-var userNameLabel = document.getElementById("labelUserNameMainDois");
-var pModal = document.getElementById("avisoForm");
+  var email = emailInput.value.trim();
+  if (!email.includes("@") || !email.includes(".")) {
+    showError(emailLabel, "The email field must contain a valid email address.");
+    return false;
+  }
 
-if (userName == "") {
-  openModal();
-  userNameLabel.innerText = "* ";
-  pModal.innerText = "The Username field must not be empty.";
-  userNameLabel.style.color = "red";
+  var password = passwordInput.value;
+  if (
+    password.length < 8 ||
+    !/[!@#$%^&*()_+-]/.test(password) ||
+    !/[0-9]/.test(password) ||
+    !/[A-Z]/.test(password)
+  ) {
+    showError(
+      passwordLabel,
+      "The password must be at least 8 characters long and contain at least one special character, one number, and one uppercase letter."
+    );
+    return false;
+  }
 
-  return false;
-} else if (userName.length < 6 || userName.length > 12) {
-  openModal();
-  userNameLabel.innerText = "* ";
-  pModal.innerText = "The username must be between 6 and 12 characters.";
-  userNameLabel.style.color = "red";
+  var passwordAgain = passwordAgainInput.value;
+  if (password !== passwordAgain) {
+    showError(passwordAgainLabel, "The password and password again fields must match.");
+    return false;
+  }
 
-  return false;
-} else if (/^\d+$/.test(userName)) {
-  openModal();
-  userNameLabel.innerText = "* ";
-  pModal.innerText = "The username must not contain numbers.";
-  userNameLabel.style.color = "red";
-
-  return false;
-} else if (/\s/.test(userName)) {
-  openModal();
-  userNameLabel.innerText = "* ";
-  pModal.innerText = "The username must not contain spaces.";
-  userNameLabel.style.color = "red";
-  return false;
-} else {
-  userNameLabel.innerText = "";
-  userNameLabel.style.color = "initial";
+  return true;
 }
 
 
-    // Check if the email field contains a valid email address.
-    var email = document.getElementById("inputEmailMainDois").value;
-    var emailLabel = document.getElementById("labelEmailMainDois");
-    if (!email.includes("@") && !email.includes(".")) {
-      openModal();
-      pModal.innerText = "The email field must contain a valid email address.";
-      emailLabel.style.color = "red";
-      return false;
-    } else {
-      emailLabel.innerText = "";
-      emailLabel.style.color = "initial";
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    // Check if the password field is at least 8 characters long and contains at least one special character, one number, and one uppercase letter.
-    var password = document.getElementById("inputPassMainDois").value;
-    var passwordLabel = document.getElementById("labelPassMainDois");
-    if (password.length < 8 || !/[!@#$%^&*()_+-]/.test(password) || !/[0-9]/.test(password) || !/[A-Z]/.test(password)) {
-      openModal();
-      pModal.innerText = "The password must be at least 8 characters long and contain at least one special character, one number, and one uppercase letter.";
-      passwordLabel.style.color = "red";
-      return false;
-    } else {
-      passwordLabel.innerText = "";
-      passwordLabel.style.color = "initial";
+// Função para verificar o usuário no localStorage ao carregar a página
+function checkUserOnLoad() {
+  // Recuperar o valor do campo de username
+  var username = document.getElementById("inputEmail").value;
+
+  // Verificar se o usuário existe no localStorage
+  var storedUser = localStorage.getItem("user");
+
+  if (storedUser) {
+    // Converter a string JSON para objeto
+    var user = JSON.parse(storedUser);
+
+    // Verificar se o username corresponde ao usuário salvo
+    if (username === user.username) {
+      // Exibir mensagem de boas-vindas
+      var welcomeMessage = "Welcome " + user.name + " " + user.lastname + "!";
+      alert(welcomeMessage);
     }
-  
-    // Check if the password and password again fields match.
-    var passwordAgain = document.getElementById("inputPassMainDoisAgain").value;
-    var passwordAgainLabel = document.getElementById("labelPassMainDoisAgain");
-    if (password != passwordAgain) {
-      openModal();
-      pModal.innerText = "The password and password again fields must match.";
-      passwordAgainLabel.style.color = "red";
-      return false;
-    } else {
-      passwordAgainLabel.innerText = "";
-      passwordAgainLabel.style.color = "initial";
-    }
-  
-    // The form is valid.
-    openModal();
-    pModal.innerText = "Successfully registered"
-    return true;
   }
+}
+
+// Adicionar um event listener ao carregar a página
+window.addEventListener("load", checkUserOnLoad);
+
+// Função para salvar o usuário no localStorage
+function saveUser() {
+    // Recuperar os valores dos campos
+    var name = document.getElementById("inputNameMainDois").value;
+    var lastname = document.getElementById("inputLastnameMainDois").value;
+    var username = document.getElementById("inputUserNameMainDois").value;
+    var password = document.getElementById("inputPassMainDois").value;
+  
+    // Criar um objeto usuário com os valores dos campos
+    var user = {
+      name: name,
+      lastname: lastname,
+      username: username,
+      password: password
+    };
+  
+    // Converter o objeto para uma string JSON
+    var userJSON = JSON.stringify(user);
+  
+    // Salvar o usuário no localStorage com a chave "user"
+    localStorage.setItem("user", userJSON);
+
+    console.log(user)
+  }
+  
+  // Adicionar um event listener ao botão "Save"
+  var btnSave = document.getElementById("btnSave");
+  btnSave.addEventListener("click", function(event) {
+    event.preventDefault(); // Evitar que o formulário seja enviado
+  
+    // Chamar a função para validar os campos
+    var isValid = validateForm();
+  
+    if (isValid) {
+      // Se os campos forem válidos, chamar a função para salvar o usuário
+      saveUser();
+  
+      // Exibir uma mensagem de sucesso
+      alert("User saved successfully!");
+  
+      // Redirecionar para a página de login
+      desfazerAcoes();
+    }
+  });
+
+// Função para verificar o usuário no localStorage
+function checkUser() {
+    // Recuperar o valor do campo de username
+    var username = document.getElementById("inputEmail").value;
+    var password = document.getElementById("inputPassMainDois").value;
+  
+    // Verificar se o usuário existe no localStorage
+    var storedUser = localStorage.getItem("user");
+  
+    if (storedUser) {
+      // Converter a string JSON para objeto
+      var user = JSON.parse(storedUser);
+  
+      // Verificar se o username corresponde ao usuário salvo
+      if (username === user.username) {
+        // Verificar se a senha corresponde à senha do usuário salvo
+        if (password === user.password) {
+          // Exibir mensagem de boas-vindas
+          var welcomeMessage = "Welcome " + user.name + " " + user.lastname + "!";
+          alert(welcomeMessage);
+        } else {
+          // Exibir mensagem de erro de senha incorreta
+          alert("Invalid password");
+        }
+      } else {
+        // Exibir mensagem de erro de username inválido
+        alert("Invalid username");
+      }
+    } else {
+      // Exibir mensagem de erro de usuário não encontrado
+      alert("User not found");
+    }
+  }
+
+// Adicionar um event listener ao formulário de login
+var formLogin = document.getElementById("login");
+formLogin.addEventListener("submit", function(event) {
+  event.preventDefault(); // Evitar que o formulário seja enviado
+
+  // Chamar a função para verificar o usuário
+  checkUser();
+
+  // Redirecionar para a página de boas-vindas (caso necessário)
+  // window.location.href = "welcome.html";
+});
