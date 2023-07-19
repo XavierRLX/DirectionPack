@@ -38,7 +38,7 @@
         <img id="img_2" class="sobeDesce" src="img/drawkit-transport-scene-11.png" alt="">
       </div>
     </section>
-    <section id="divLoginMainUp" class="loginMain ">
+    <section id="divLoginMainUp" class="loginMain">
       <div id="logMainUm">
         <div id="IdDivLogMain" class="divloginMain">
           <h1>Welcome back !</h1>
@@ -46,11 +46,11 @@
             <div class="GroupInputs">
               <div class="GroupInput">
                 <label for="" id="labelEmail"></label>Username <br>
-                <input type="text" name="UserLogin" id="inputName" required>
+                <input type="text" name="UserLogin" id="inputName">
               </div>
               <div class="GroupInput">
                 <label for="showPassword" id="labelPass"></label>Password <br>
-                <input type="password" id="inputPass" required>
+                <input type="password" id="inputPass">
               </div>
             </div>
             <div class="eyesView">
@@ -68,7 +68,7 @@
               <p><a href="#">Forgot your password?</a></p>
             </div>
             <div class="singIn">
-              <p>don't have Username?<span id="aSingUp"> Sing Up</span></p>
+              <p>don't have username?<span id="aSingUp"> Sing Up</span></p>
             </div>
             <div class="divbtnLogin"><button id="btnLogin">Login</button></div>
           </form>
@@ -77,11 +77,11 @@
       <div id="logMainDois">
         <div id="IdDivLogMain" class="divloginMain">
           <h1>Register !</h1>
-          <form id="loginMainDois" onsubmit="return validateForm()" novalidate>
+          <form id="loginMainDois" novalidate>
             <div class="GroupInputs">
               <div class="GroupInput">
                 <label for="inputNameMainDois" id="labelNomeMainDois"></label>Name <br>
-                <input type="text" id="inputNameMainDois" required>
+                <input type="text" id="inputNameMainDois" required />
               </div>
               <div class="GroupInput">
                 <label for="inputLastnameMainDois" id="labelLastNameMainDois"></label>LastName <br>
@@ -109,7 +109,7 @@
             </div>
             <br>
             <div class="divbtnLogin">
-              <button id="btnSave">Save</button>
+              <button type="button" id="btnSave" onclick="saveUser()">Save</button>
             </div>
           </form>
           <div class="DonthaveUsername">
@@ -130,9 +130,11 @@
 
 
   <footer></footer>
-  <script src="JavaScript/FormSingUp.js"></script>
+  <script src="JavaScript/ValidateFormSingUp.js"></script>
   <script src="JavaScript/FormStyle.js"></script>
   <script src="JavaScript/ViewPassword.js"></script>
+  <script src="JavaScript/LoginUser.js"></script>
+  <script src="JavaScript/CreatUsers.js"></script>
 </body>
 
 </html>
