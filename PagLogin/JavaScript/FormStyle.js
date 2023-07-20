@@ -1,8 +1,8 @@
 function LoginMain(){
   let LoginMainUp = document.getElementById('divLoginMainUp');
   let divImgMainUp = document.getElementById('divImgMainEdit');
-  LoginMainUp.style.height = '95%'
-  divImgMainUp.style.height = '5%'
+  LoginMainUp.style.height = '85%'
+  divImgMainUp.style.height = '15%'
 }
 
 function ativarAnimacao() {
@@ -31,8 +31,7 @@ document.getElementById('aSingUp').addEventListener('click', function() {
   LoginMain();
   ativarAnimacao();
   ativarMainDois();
-  deleteImg();
-  
+  deleteImg();  
 });
 
 

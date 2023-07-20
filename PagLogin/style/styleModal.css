@@ -1,6 +1,6 @@
 /* Estilos para o modal */
 .modal {
-    display: none;
+      display: none; 
       position: fixed;
       z-index: 1;
       left: 0;
@@ -15,17 +15,21 @@
       background-color: #ffffff;
       margin: 10% auto; 
       padding: 5px;
+
       color: #fff;
       width: 80%;
       max-width: 350px;
+      border-radius: 5px;
     }
     .modal .modal-content h2 {
       background-color: #e9400d;
+      border-radius: 5px;
       padding: 2px;
     }
   
     .modal .modal-content p {
       margin: 10px 0 10px 0;
+      font-weight: 900;
       color: #111213;
     }
     .modal .modal-content div {
@@ -34,9 +38,10 @@
       justify-content: flex-end;
     }
     .modal .modal-content div button {
-      width: 80px;
-      box-shadow: 1px 1px 5px #111213;
+      width: 50px;
+      box-shadow: none;
       border-radius: 0px;
       background-color: #e9400d;
+      border-radius: 5px
     }
   

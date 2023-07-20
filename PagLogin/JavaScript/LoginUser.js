@@ -13,14 +13,13 @@ function login() {
     if (user) {
         // User found, now check the password
         if (user.password === passwordInput) {
-            // Correct password, display welcome message
-            alert(`Welcome, ${user.username}!`);
+            WelcomeUser();
         } else {
             // Incorrect password
-            alert("Incorrect password");
+            openModal(`Incorret Password !`)
         }
     } else {
         // User not found
-        alert("User not found");
+        openModal(`User not found !`)
     }
 }

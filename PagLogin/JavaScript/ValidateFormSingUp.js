@@ -1,32 +1,4 @@
-// Function to display a modal with the given message
-function openModal(message) {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "block";
-    const alertModal = document.getElementById("avisoForm");
-    alertModal.innerText = message;
-}
 
-// Function to close the modal
-function closeModal() {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "none";
-}
-
-// Function to display an error message, and highlight the corresponding input element
-function showError(inputElement, message) {
-    inputElement.classList.add("error");
-    openModal(message);
-}
-
-// Function to clear the error style from the input element
-function clearError(inputElement) {
-    inputElement.classList.remove("error");
-}
-
-// Function to save user data and open the modal
-function saveUserModal() {
-    openModal("User Created");
-}
 
 // Function to validate the user registration form
 function validateForm() {

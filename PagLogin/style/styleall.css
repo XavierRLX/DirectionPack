@@ -19,14 +19,14 @@ body {
   justify-self: center;
   justify-content: center;
   width: 100%;
-  height: 95%;
+  height: 100%;
 }
 
 header {
   height: 5%;
 }
 
-header .logoTipo {
+.logoTipo {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -34,11 +34,12 @@ header .logoTipo {
   font-weight: lighter;
 }
 
-header .logoTipo h1 {
+.logoTipo h1 {
   letter-spacing: 2px;
+  font-size: 2rem;
 }
 
-header .logoTipo img {
+.logoTipo img {
   width: 30px;
   height: 30px;
 }
@@ -274,21 +275,19 @@ button:hover {
   .ondas {
     display: none;
   }
-  .centerObject .imgMain {
-    background-color: #58c1eb;
+  
+  .centerObject .imgMain{
+    flex: 1 1 50%;
+    height: 100%;
   }
   .centerObject .loginMain{
-    background-color: #000;
-  }
-  .centerObject .imgMain {
-    width: 50%;
+    flex: 2 1 50%;
     height: 100%;
-    position: relative;
   }
-    .centerObject .loginMain {
-      background-color: #58c1eb;
-      height: 100%;
-      width: 50%;
-      transition: .5s;
-  }
+  
+.centerObject .imgMain #img_2 {
+  position: relative;
+  margin-top: 10%;
+}
+
 }

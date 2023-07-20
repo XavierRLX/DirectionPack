@@ -1,15 +1,15 @@
 var users = [];
 
-// // Adicionar um usuário manualmente
-// var adUser = {
-//   name: "Renan",
-//   lastname: "Xavier",
-//   username: "RenanX",
-//   email: "renan@gmail.com",
-//   password: "RenanX1@"
-// };
+// Adicionar um usuário manualmente
+var adUser = {
+  name: "Renan",
+  lastname: "Xavier",
+  username: "RenanX",
+  email: "renan@gmail.com",
+  password: "RenanX1@" 
+};
 
-// users.push(adUser);
+users.push(adUser);
 
 function saveUsersToLocalStorage() {
     localStorage.setItem("users", JSON.stringify(users));
@@ -43,7 +43,7 @@ function saveUser() {
         document.getElementById("inputPassMainDoisAgain").value = "";
 
         saveUsersToLocalStorage();
-        saveUserModal();
+        openModal(`Successfully created user !`)
 
         console.log(users)
 
@@ -62,3 +62,6 @@ function loadUsersFromLocalStorage() {
 
 loadUsersFromLocalStorage();
 console.log(users);
+
+
+

@@ -16,6 +16,9 @@ const togglePasswordVisibility = () => {
 // Add event listener to the button for the first password input
 showPasswordButton.addEventListener('click', togglePasswordVisibility);
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Get the elements for the second set of password input fields
 const showPasswordButtonMainDois = document.getElementById('showPasswordButtonMainDois');
 const inputPassMainDois = document.getElementById('inputPassMainDois');

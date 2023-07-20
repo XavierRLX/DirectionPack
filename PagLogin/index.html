@@ -12,13 +12,12 @@
 </head>
 
 <body>
-  <header>
-    <div class="logoTipo">
-      <h1>Direction Pack</h1>
-    </div>
-  </header>
+
   <main class="centerObject">
     <section id="divImgMainEdit" class="imgMain">
+      <article class="logoTipo">
+        <h1>Direction Pack</h1>
+      </article>
       <!-- <img id="img_0" src="img/1059717.png" alt=""> -->
       <div class="ondas" style="overflow: hidden;">
         <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
@@ -122,9 +121,9 @@
 
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <h2>Alert!</h2>
-      <p id="avisoForm">Seu aviso aqui...</p>
-      <div><button onclick="closeModal()">OK</button></div>
+      <h2 id="hModal"> Alert !</h2>
+      <p id="avisoForm">text</p>
+      <div><button id="btnModal" onclick="closeModal()">OK</button></div>
     </div>
   </div>
 
@@ -135,6 +134,7 @@
   <script src="JavaScript/ViewPassword.js"></script>
   <script src="JavaScript/LoginUser.js"></script>
   <script src="JavaScript/CreatUsers.js"></script>
+  <script src="JavaScript/OpenModal.js"></script>
 </body>
 
 </html>
