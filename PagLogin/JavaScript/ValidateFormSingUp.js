@@ -65,8 +65,7 @@ function validateForm() {
         !/[A-Z]/.test(password)
     ) {
         return showErrorAndReturnFalse(
-            passwordLabel,
-            "The password must be at least 8 characters long and contain at least one special character, one number, and one uppercase letter."
+            passwordLabel, "The password must contain: \n - 14 characters or greater \n - Special character \n - Number \n - Uppercase and lowercase letters"
         );
     }
 

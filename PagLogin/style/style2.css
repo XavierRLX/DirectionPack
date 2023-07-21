@@ -98,3 +98,20 @@
 .sobeDesce {
     animation: subirDescer 2s ease-in-out infinite;
 }
+
+
+@keyframes dropAndGrow {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        margin-top: 5%;
+    }
+    100% {
+        transform: translateY(0);
+        margin-top: 10%;
+    }
+}
+.topB {
+	animation: dropAndGrow .1s ease-out;
+}
