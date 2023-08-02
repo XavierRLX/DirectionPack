@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="PagLogin/style/styleall.css">
   <link rel="stylesheet" href="PagLogin/style/style2.css">
   <link rel="stylesheet" href="PagLogin/style/styleModal.css">
-  <title>Login</title>
+  <title>Login - DP</title>
 </head>
 
 <body>
@@ -64,7 +64,7 @@
                 </div>
                 <p>Remember me</p>
               </div>
-              <p><a href="#">Forgot your password?</a></p>
+              <p id="ForgetPassword"><a  id="forgotPasswordLink" href="#">Forgot your password?</a></p>
             </div>
             <div class="singIn">
               <p>don't have username?<span id="aSingUp"> Sing Up</span></p>
@@ -119,8 +119,8 @@
     </section>
   </main>
 
-  <div id="myModal" class="modal">
-    <div class="modal-content">
+  <div id="myModal" class="modal ">
+    <div class="modal-content topB">
       <h2 id="hModal"> Alert !</h2>
       <p id="avisoForm">text</p>
       <div><button id="btnModal" onclick="closeModal()">OK</button></div>
@@ -135,6 +135,7 @@
   <script src="PagLogin/JavaScript/LoginUser.js"></script>
   <script src="PagLogin/JavaScript/CreatUsers.js"></script>
   <script src="PagLogin/JavaScript/OpenModal.js"></script>
+  <script src="PagLogin/JavaScript/ForgotPassword.js"></script>
 </body>
 
 </html>

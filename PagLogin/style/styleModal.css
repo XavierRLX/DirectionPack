@@ -15,7 +15,6 @@
       background-color: #ffffff;
       margin: 10% auto; 
       padding: 5px;
-
       color: #fff;
       width: 80%;
       max-width: 350px;
@@ -28,7 +27,8 @@
     }
   
     .modal .modal-content p {
-      margin: 10px 0 10px 0;
+      text-align: center;
+      margin: 10px 0 0px 0;
       font-weight: 900;
       color: #111213;
     }
