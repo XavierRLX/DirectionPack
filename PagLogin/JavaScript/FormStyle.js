@@ -1,8 +1,16 @@
-function LoginMain(){
+function LoginMain() {
+  const screenWidth = window.innerWidth;
   let LoginMainUp = document.getElementById('divLoginMainUp');
   let divImgMainUp = document.getElementById('divImgMainEdit');
-  LoginMainUp.style.height = '85%'
-  divImgMainUp.style.height = '15%'
+
+  if (screenWidth >= 1000) {
+    LoginMainUp.style.height = '100%';
+    divImgMainUp.style.height = '15%';
+
+  } else {
+    LoginMainUp.style.height = '85%';
+    divImgMainUp.style.height = '15%';
+  }
 }
 
 function ativarAnimacao() {
@@ -22,10 +30,17 @@ function ativarMainDois(){
    }, 500);
 }
 
-function deleteImg(){
+function deleteImg() {
+  const screenWidth = window.innerWidth;
   let deleteImgNone = document.getElementById('img_2');
-  deleteImgNone.style.display = 'none';
+
+  if (screenWidth < 1000) {
+    deleteImgNone.style.display = 'none';
+  } else {
+    deleteImgNone.style.display = 'inline'; // Or 'block', depending on the element's original display property
+  }
 }
+
 
 document.getElementById('aSingUp').addEventListener('click', function() {
   LoginMain();
