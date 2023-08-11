@@ -1,0 +1,24 @@
+{
+  "name": "directionpack",
+  "version": "1.0.0",
+  "description": "Pag Login",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XavierRLX/DirectionPack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XavierRLX/DirectionPack/issues"
+  },
+  "homepage": "https://github.com/XavierRLX/DirectionPack#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.4"
+  }
+}
