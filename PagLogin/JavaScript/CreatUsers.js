@@ -6,7 +6,7 @@ const adUser = {
   name: "Renan",
   lastname: "Xavier",
   username: "RenanX",
-  email: "renan@gmail.com",
+  email: "renanlima2000.aer@gmail.com",
   password: "RenanX1@"
 };
 

@@ -1,5 +1,4 @@
 
-
 // Function to validate the user registration form
 function validateForm() {
     // Get input elements and corresponding labels

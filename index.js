@@ -5,7 +5,7 @@ const bodyParser = require('body-parser'); // Adicione esta linha para fazer o p
 const fs = require('fs');
 
 app.use(bodyParser.urlencoded({ extended: false })); // Use o middleware bodyParser
-app.use(express.static('testEmail')); // Adicione esta linha para servir arquivos estáticos
+app.use(express.static('PagLogin')); // Adicione esta linha para servir arquivos estáticos
 
 // Configuração do transporte
 const transport = nodemailer.createTransport({
@@ -14,29 +14,29 @@ const transport = nodemailer.createTransport({
   secure: true,
   auth: {
     user: 'renanlima2000.aer@gmail.com',
-    pass: '#',
+    pass: 'uqwuwzfrwaedrojz',
   }
 });
 
 // Rota para a página inicial
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/testEmail/teste.html');
+    res.sendFile('index.html');
   });
 
 // Rota para enviar email
 app.post('/send-email', (req, res) => {
-    const { toEmail } = req.body; // Obtenha o endereço de email do corpo da solicitação
+    const { toEmail, nome, sobrenome } = req.body; // Obtenha o endereço de email do corpo da solicitação
   
-    const emailContent = fs.readFileSync(__dirname + '/modelemail.html', 'utf-8');
+  const emailContent = fs.readFileSync(__dirname + '/modelemail.html', 'utf-8');
+  const personalizedEmailContent = emailContent.replace('{{NOME}}', nome).replace('{{SOBRENOME}}', sobrenome);
 
-    const mailOptions = {
-      from: 'teste',
-      to: toEmail, // Use 'to' em vez de 'mailOptions'
-      subject: 'Enviado com nodemailer',
-      html: emailContent,
-     // text: 'teste',
-    };
+  const mailOptions = {
+    from: 'teste',
+    to: toEmail,
+    subject: 'Direction Pack',
+    html: personalizedEmailContent,
+  };
 
   transport.sendMail(mailOptions)
     .then(() => res.send('Enviado'))

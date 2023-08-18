@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="PagLogin/style/styleall.css">
-  <link rel="stylesheet" href="PagLogin/style/style2.css">
-  <link rel="stylesheet" href="PagLogin/style/styleModal.css">
+  <link rel="stylesheet" href="Style/styleall.css">
+  <link rel="stylesheet" href="Style/style2.css">
+  <link rel="stylesheet" href="Style/styleModal.css">
   <title>Login - DP</title>
 </head>
 
@@ -34,7 +34,7 @@
       </div>
 
       <div class="imgGrande">
-        <img id="img_2" class="sobeDesce" src="PagLogin/img/drawkit-transport-scene-11.png" alt="">
+        <img id="img_2" class="sobeDesce" src="img/drawkit-transport-scene-11.png" alt="">
       </div>
     </section>
     <section id="divLoginMainUp" class="loginMain">
@@ -64,7 +64,7 @@
                 </div>
                 <p>Remember me</p>
               </div>
-              <p id="ForgetPassword"><a  id="forgotPasswordLink" href="#">Forgot your password?</a></p>
+              <p id="ForgetPassword"> <a id="forgotPasswordLink" href="#">Forgot your password?</a></p>
             </div>
             <div class="singIn">
               <p>don't have username?<span id="aSingUp"> Sing Up</span></p>
@@ -129,13 +129,35 @@
 
 
   <footer></footer>
-  <script src="PagLogin/JavaScript/ValidateFormSingUp.js"></script>
-  <script src="PagLogin/JavaScript/FormStyle.js"></script>
-  <script src="PagLogin/JavaScript/ViewPassword.js"></script>
-  <script src="PagLogin/JavaScript/LoginUser.js"></script>
-  <script src="PagLogin/JavaScript/CreatUsers.js"></script>
-  <script src="PagLogin/JavaScript/OpenModal.js"></script>
-  <script src="PagLogin/JavaScript/ForgotPassword.js"></script>
-</body>
+  <script src="JavaScript/ValidateFormSingUp.js"></script>
+  <script src="JavaScript/FormStyle.js"></script>
+  <script src="JavaScript/ViewPassword.js"></script>
+  <script src="JavaScript/LoginUser.js"></script>
+  <script src="JavaScript/CreatUsers.js"></script>
+  <script src="JavaScript/OpenModal.js"></script>
+  <script src="JavaScript/ForgotPassword.js"></script>
 
+
+  <script>
+    
+const sendEmailBtn = document.getElementById('btnSave');
+sendEmailBtn.addEventListener('click', () => {
+  const email = "renanlima2000.aer@gmail.com";
+  const nome = "Renan";
+  const sobrenome = "Xavier";
+
+  fetch('/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `toEmail=${email}&nome=${nome}&sobrenome=${sobrenome}`
+  })
+  .then(response => response.text())
+  .then(message => alert(message))
+  .catch(error => console.error('Erro:', error));
+});
+
+  </script>
+</body>
 </html>
