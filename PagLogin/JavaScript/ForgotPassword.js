@@ -1,11 +1,9 @@
 // Function to mask the email
 function maskEmail(email) {
     const atIndex = email.indexOf("@");
-    const maskedEmail = email.replace(email.slice(0, atIndex - 2), "*".repeat(atIndex - 2));
+    const maskedEmail = email.charAt(0) + "*".repeat(atIndex - 2) + email.slice(atIndex - 1);
     return maskedEmail;
 }
-
-
 // Function to check if the username input is empty
 function isUsernameEmpty() {
     const usernameInput = document.getElementById("inputName").value.trim();
