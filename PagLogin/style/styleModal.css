@@ -19,11 +19,13 @@
       width: 80%;
       max-width: 350px;
       border-radius: 5px;
+      text-align: center;
     }
     .modal .modal-content h2 {
       background-color: #e9400d;
       border-radius: 5px;
       padding: 2px;
+      text-align: left;
     }
   
     .modal .modal-content p {
@@ -44,4 +46,7 @@
       background-color: #e9400d;
       border-radius: 5px
     }
-  
+    .modal .modal-content input{
+      margin-top: 10px;
+    }
+    

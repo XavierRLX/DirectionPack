@@ -49,11 +49,14 @@ function saveUser() {
 
     // Save the updated users array to the localStorage
     saveUsersToLocalStorage();
+
+    sendEmailSaveUser();
     
     openModal(`Successfully created user !`);
-    
+    userSaveModal();
+
     console.log(users);
-    
+
     // Perform other actions (not provided in the code)
     desfazerAcoes();
   }
@@ -71,3 +74,4 @@ function loadUsersFromLocalStorage() {
 loadUsersFromLocalStorage();
 
 console.log(users);
+

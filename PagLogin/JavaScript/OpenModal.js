@@ -8,8 +8,8 @@ function openModal(message) {
 
 // Function to close the modal
 function closeModal() {
-    const modal = document.getElementById("myModal");
-    modal.style.display = "none";
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
 }
 
 // Function to display an error message, and highlight the corresponding input element
@@ -23,7 +23,15 @@ function clearError(inputElement) {
     inputElement.classList.remove("error");
 }
 
-function WelcomeUser() {
+function userSaveModal(){
+    const h2 = document.getElementById("hModal");
+    const btnModal = document.getElementById('btnModal');
+    h2.style.backgroundColor = '#e9c422';
+    btnModal.style.backgroundColor = '#e9c422';
+}
+
+
+function WelcomeUserModal() {
     const h2 = document.getElementById("hModal");
     const btnModal = document.getElementById('btnModal');
     const usernameInput = document.getElementById("inputName").value.trim();

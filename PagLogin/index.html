@@ -91,9 +91,9 @@
                 <input type="text" id="inputUserNameMainDois" required>
               </div>
               <div class="GroupInput">
-                <label for="inputEmailMainDois" id="labelEmailMainDois"></label>Email <br>
+                <label for="inputEmailMainDois" id="labelEmailMainDois">Email <br></label>
                 <input type="email" name="UserLogin" id="inputEmailMainDois" required>
-              </div>
+            </div>
               <div class="GroupInput">
                 <label for="inputPassMainDois" id="labelPassMainDois"></label>Password <br>
                 <input type="password" id="inputPassMainDois" required>
@@ -119,16 +119,18 @@
     </section>
   </main>
 
-  <div id="myModal" class="modal ">
+  <div id="myModal" class="modal">
     <div class="modal-content topB">
-      <h2 id="hModal"> Alert !</h2>
-      <p id="avisoForm">text</p>
-      <div><button id="btnModal" onclick="closeModal()">OK</button></div>
+        <h2 id="hModal">Alert!</h2>
+        <p id="avisoForm">Digite o código de verificação enviado:</p>
+        <div><button id="btnModal" onclick="closeModal()">OK</button></div>
     </div>
-  </div>
+</div>
 
+  
+  <footer>
+  </footer>
 
-  <footer></footer>
   <script src="JavaScript/ValidateFormSingUp.js"></script>
   <script src="JavaScript/FormStyle.js"></script>
   <script src="JavaScript/ViewPassword.js"></script>
@@ -136,27 +138,30 @@
   <script src="JavaScript/CreatUsers.js"></script>
   <script src="JavaScript/OpenModal.js"></script>
   <script src="JavaScript/ForgotPassword.js"></script>
+  <script src="JavaScript/sendEmail.js"></script>
 
 
   <script>
     
 const sendEmailBtn = document.getElementById('btnSave');
 sendEmailBtn.addEventListener('click', () => {
-  const email = "renanlima2000.aer@gmail.com";
-  const nome = "Renan";
-  const sobrenome = "Xavier";
+//   const email = "renanlima2000.aer@gmail.com";
+//   const nome = "Renan";
+//   const sobrenome = "Xavier";
 
-  fetch('/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: `toEmail=${email}&nome=${nome}&sobrenome=${sobrenome}`
-  })
-  .then(response => response.text())
-  .then(message => alert(message))
-  .catch(error => console.error('Erro:', error));
-});
+//   fetch('/send-email', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/x-www-form-urlencoded'
+//     },
+//     body: `toEmail=${email}&nome=${nome}&sobrenome=${sobrenome}`
+//   })
+//   .then(response => response.text())
+//   .then(message => alert(message))
+//   .catch(error => console.error('Erro:', error));
+//
+ });
+
 
   </script>
 </body>

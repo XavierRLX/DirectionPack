@@ -24,6 +24,7 @@ function handleForgotPasswordClick(event) {
             const emailSend = foundUser.email;
             const maskedEmail = maskEmail(emailSend);
             openModal(`Email sent to ${maskedEmail}`);
+            sendEmailForgetPassword();
         } else {
             openModal("User not found !");
         }

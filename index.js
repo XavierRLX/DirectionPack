@@ -18,18 +18,22 @@ const transport = nodemailer.createTransport({
   }
 });
 
-// Rota para a página inicial
 
+
+// Rota para a página inicial
 app.get('/', (req, res) => {
     res.sendFile('index.html');
   });
+
+
+
 
 // Rota para enviar email
 app.post('/send-email', (req, res) => {
     const { toEmail, nome, sobrenome } = req.body; // Obtenha o endereço de email do corpo da solicitação
   
-  const emailContent = fs.readFileSync(__dirname + '/modelemail.html', 'utf-8');
-  const personalizedEmailContent = emailContent.replace('{{NOME}}', nome).replace('{{SOBRENOME}}', sobrenome);
+  const EmailWelcome = fs.readFileSync(__dirname + '/modelEmailWelcome.html', 'utf-8');
+  const personalizedEmailContent = EmailWelcome.replace('{{NOME}}', nome).replace('{{SOBRENOME}}', sobrenome);
 
   const mailOptions = {
     from: 'teste',
@@ -42,6 +46,29 @@ app.post('/send-email', (req, res) => {
     .then(() => res.send('Enviado'))
     .catch((err) => res.status(500).send('Erro: ' + err));
 });
+
+///////////////////////////////////////////////////////////////////////////////
+
+app.post('/send-email-forgetpassword', (req, res) => {
+  const { toEmail, nome, sobrenome, senha } = req.body; // Obtenha o endereço de email do corpo da solicitação
+
+const EmailForgtePassword = fs.readFileSync(__dirname + '/modelEmailForgetPassword.html', 'utf-8');
+const personalizedEmailForgtePassword = EmailForgtePassword.replace('{{NOME}}', nome).replace('{{SOBRENOME}}', sobrenome)
+.replace('{{SENHA}}', senha);
+
+const mailOptions = {
+  from: 'teste',
+  to: toEmail,
+  subject: 'Direction Pack',
+  html: personalizedEmailForgtePassword,
+};
+
+transport.sendMail(mailOptions)
+  .then(() => res.send('Enviado'))
+  .catch((err) => res.status(500).send('Erro: ' + err));
+});
+
+
 
 // Inicialização do servidor
 const port = 3000;
