@@ -3,7 +3,7 @@ function sendEmailSaveUser(){
       const nome = "Renan";
       const sobrenome = "Xavier";
   
-      fetch('/send-email', {
+      fetch('/send-welcome-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
