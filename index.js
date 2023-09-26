@@ -37,6 +37,11 @@ app.get('/PagMain/index.html', (req, res) => {
 
 
 const port = 3080;
+
+app.get('/update', (req, res) => {
+  return res.json({messege: 'update'})
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
