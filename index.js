@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('PagLogin'));
 app.use(express.static('PagLoad'));
+app.use(express.static('PagHome'));
 
 
 const path = require('path');
@@ -35,12 +36,13 @@ app.get('/PagMain/index.html', (req, res) => {
   res.sendFile(indexPath);
 });
 
+app.get('/home', (req, res) => {
+  const indexPath = path.join(__dirname, './PagHome/index.html');
+  res.sendFile(indexPath);
+});
+
 
 const port = 3080;
-
-app.get('/update', (req, res) => {
-  return res.json({messege: 'update'})
-});
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
