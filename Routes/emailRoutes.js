@@ -15,8 +15,11 @@ const transport = nodemailer.createTransport({
   secure: true,
   auth: {
     user: 'renanlima2000.aer@gmail.com',
-    pass: 'uqwuwzfrwaedrojz',
-  }
+    pass: 'bnaeauszgluontqb',
+  },
+  tls: {
+    rejectUnauthorized: false, // ou true, dependendo da sua configuração
+  },
 });
 
 // Middleware de tratamento de erros
