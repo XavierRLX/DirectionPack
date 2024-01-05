@@ -47,11 +47,10 @@ app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, './Routes/modelError.html'));
 });
 
-// Middleware de tratamento de erros
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).sendFile(path.join(__dirname, './Routes/modelError.html'));
-});
+// app.use((err, req, res, next) => {
+//   console.error(err);
+//   res.status(500).sendFile(path.join(__dirname, './Routes/modelError.html'));
+// });
 
 
 const port = 3080;
