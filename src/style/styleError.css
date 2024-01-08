@@ -11,25 +11,41 @@ body {
   width: 100%;
   letter-spacing: 1px;
   font-family: 'Kanit', sans-serif;
+  height: 100vh;
+
 }
 header {
     padding: 10px;
     background-color: #58c1eb;
-    color: #e9c422;
     font-size: 2em;
     font-weight: bolder;
 }
+header > p > a {
+    color: #e9c422;
+    text-decoration: none;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-a {
-    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+h1 {
     color: #e9c422;
 }
+main > p > a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: inset;
+    border-width: 1px;
+}
 main > img {
-    width: 50%;
-    height: 30%;
+    width: 90%;
+    height: 50%;
     padding: 20px;
 }
