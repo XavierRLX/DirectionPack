@@ -16,7 +16,7 @@ function login() {
             WelcomeUserModal();
             setTimeout(function() {
                 // Altere "outra-pasta/index.html" para o caminho da outra página que você deseja redirecionar
-                window.location.href = "../PagMain/index.html";
+                window.location.href = "/cep";
               }, 2000);
         } else {
             // Incorrect password

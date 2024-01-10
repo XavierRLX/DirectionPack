@@ -41,6 +41,15 @@ app.get('/home', (req, res) => {
   res.sendFile(indexPath);
 });
 
+app.get('/cep', (req, res) => {
+  const indexPath = path.join(__dirname, './html/cep.html');
+  res.sendFile(indexPath);
+});
+
+app.get('/cep', (req, res) => {
+  const indexPath = path.join(__dirname, './html/cep.html');
+  res.sendFile(indexPath);
+});
 
 // Middleware para lidar com erros 404
 app.use((req, res, next) => {
