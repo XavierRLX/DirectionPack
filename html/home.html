@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Direction Pack</h1>
-        <p>Welcome, @user</p>
+        <p id="welcomeMessage">Welcome, @user</p>
     </header>
     <main>
         <section class="cep-container">
@@ -21,4 +21,13 @@
         <p>All rights reserved for Direction Pack 2024</p>
     </footer>
 </body>
+
+<script>
+    // Recupere o nome completo do usuário do localStorage e atualize o elemento HTML
+    const loggedInFullName = localStorage.getItem("loggedInFullName");
+    if (loggedInFullName) {
+        document.getElementById("welcomeMessage").textContent = `Welcome, ${loggedInFullName}.`;
+    }
+
+</script>
 </html> 

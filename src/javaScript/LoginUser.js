@@ -13,10 +13,11 @@ function login() {
     if (user) {
         // User found, now check the password
         if (user.password === passwordInput) {
+            localStorage.setItem("loggedInFullName", `${user.name} ${user.lastname}`);
             WelcomeUserModal();
             setTimeout(function() {
                 // Altere "outra-pasta/index.html" para o caminho da outra página que você deseja redirecionar
-                window.location.href = "/cep";
+                window.location.href = "/home";
               }, 2000);
         } else {
             // Incorrect password

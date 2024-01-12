@@ -16,51 +16,27 @@ app.use('/assets/img', express.static(__dirname + '/src/assets/img'));
 
 const path = require('path');
 
-app.get('/', (req, res) => {
-  const indexPath = path.join(__dirname, './html/load.html');
-  res.sendFile(indexPath);
-});
+// Defina suas rotas de maneira dinâmica
+const routes = [
+  { path: '/', file: 'load.html' },
+  { path: '/load', file: 'load.html' },
+  { path: '/login', file: 'paglogin.html' },
+  { path: '/home', file: 'home.html' },
+  { path: '/cep', file: 'cep.html' },
+];
 
-app.get('/load', (req, res) => {
-  const indexPath = path.join(__dirname, './html/load.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/login', (req, res) => {
-  const indexPath = path.join(__dirname, './html/paglogin.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/html/home.html', (req, res) => {
-  const indexPath = path.join(__dirname, './html/home.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/home', (req, res) => {
-  const indexPath = path.join(__dirname, './html/home.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/cep', (req, res) => {
-  const indexPath = path.join(__dirname, './html/cep.html');
-  res.sendFile(indexPath);
-});
-
-app.get('/cep', (req, res) => {
-  const indexPath = path.join(__dirname, './html/cep.html');
-  res.sendFile(indexPath);
+// Itera sobre o array de rotas e define as rotas dinamicamente
+routes.forEach(route => {
+  app.get(route.path, (req, res) => {
+    const indexPath = path.join(__dirname, `./html/${route.file}`);
+    res.sendFile(indexPath);
+  });
 });
 
 // Middleware para lidar com erros 404
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, './Routes/modelError.html'));
 });
-
-// app.use((err, req, res, next) => {
-//   console.error(err);
-//   res.status(500).sendFile(path.join(__dirname, './Routes/modelError.html'));
-// });
-
 
 const port = 3080;
 
