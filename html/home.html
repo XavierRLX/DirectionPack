@@ -10,7 +10,10 @@
 <body>
     <header>
         <h1>Direction Pack</h1>
-        <p id="welcomeMessage">Welcome, @user</p>
+        <nav>
+        <p id="welcomeMessage">@user</p>
+        <p id="logoutButton">Sair</p>
+        </nav>
     </header>
     <main>
         <section class="cep-container">
@@ -23,11 +26,27 @@
 </body>
 
 <script>
-    // Recupere o nome completo do usuário do localStorage e atualize o elemento HTML
-    const loggedInFullName = localStorage.getItem("loggedInFullName");
-    if (loggedInFullName) {
-        document.getElementById("welcomeMessage").textContent = `Welcome, ${loggedInFullName}.`;
-    }
+    // Verifique se o usuário está logado
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
 
+    if (!isLoggedIn) {
+        window.location.href = "/load";
+    } else {
+        const loggedInFullName = localStorage.getItem("loggedInFullName");
+
+        if (loggedInFullName) {
+            document.getElementById("welcomeMessage").textContent = `${loggedInFullName}`;
+        }
+    }
+    // Adicione um evento de clique ao botão "sair"
+    document.getElementById("logoutButton").addEventListener("click", function() {
+        // Remova as informações de login do localStorage
+        
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loggedInFullName");
+
+        // Redirecione para a página de login
+        window.location.href = "/load";
+    });
 </script>
 </html> 

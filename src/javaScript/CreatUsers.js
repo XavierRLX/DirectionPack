@@ -5,9 +5,9 @@ let users = [];
 const adUser = {
   name: "Renan",
   lastname: "Xavier",
-  username: "RenanX",
+  username: "Renan",
   email: "renanlima2000.aer@gmail.com",
-  password: "RenanX1@"
+  password: "X"
 };
 
 users.push(adUser);
