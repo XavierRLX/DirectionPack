@@ -15,11 +15,10 @@ function login() {
         if (user.password === passwordInput) {
             localStorage.setItem("loggedInFullName", `${user.name} ${user.lastname}`);
             localStorage.setItem("isLoggedIn", "true");
+            
             WelcomeUserModal();
-            setTimeout(function() {
-                // Altere "outra-pasta/index.html" para o caminho da outra página que você deseja redirecionar
-                window.location.href = "/home";
-              }, 2000);
+
+            window.location.href = "/load";
         } else {
             // Incorrect password
             openModal(`Incorret Password !`)
