@@ -17,6 +17,21 @@
     
 </body>
 <script>
-        checkLoggedIn();
-    </script>
+    
+    function redirectToLoginPage() {
+    setTimeout(function() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (!isLoggedIn) {
+            window.location.href = "/login";
+        } else {
+            window.location.href = "/home";
+        }
+    }, 2000);
+}
+
+window.addEventListener('load', redirectToLoginPage);
+
+
+</script>
 </html>

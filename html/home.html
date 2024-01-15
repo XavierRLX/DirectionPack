@@ -38,6 +38,7 @@
             document.getElementById("welcomeMessage").textContent = `${loggedInFullName}`;
         }
     }
+
     // Adicione um evento de clique ao botão "sair"
     document.getElementById("logoutButton").addEventListener("click", function() {
         // Remova as informações de login do localStorage
@@ -47,13 +48,6 @@
 
         // Redirecione para a página de login
         window.location.href = "/load";
-    });
-</script>
-<script>
-    // Adicione um evento de clique ao botão "sair"
-    document.getElementById("logoutButton").addEventListener("click", function() {
-        // Use a função logout do script auth.js
-        logout();
     });
 </script>
 </html> 
