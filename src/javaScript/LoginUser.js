@@ -1,6 +1,12 @@
 // Add event listener to the login button
 document.getElementById("btnLogin").addEventListener("click", login);
 
+document.getElementById("inputPass").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      login();
+    }
+  });
+
 // Function to handle the login process
 function login() {
     // Get input values and trim the username
@@ -17,8 +23,10 @@ function login() {
             localStorage.setItem("isLoggedIn", "true");
             
             WelcomeUserModal();
-
-            window.location.href = "/load";
+            
+            setTimeout(function() {
+                window.location.href = "/load";
+            }, 2000);
         } else {
             // Incorrect password
             openModal(`Incorret Password !`)

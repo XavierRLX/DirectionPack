@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style/styleLogin.css">
   <link rel="stylesheet" href="style/style2.css">
   <link rel="stylesheet" href="style/styleModal.css">
+  <link rel="shortcut icon" href="assets/img/placeholder.png" type="image/x-icon">
   <title>DP - Login</title>
 </head>
 
@@ -164,6 +165,8 @@ sendEmailBtn.addEventListener('click', () => {
 
         if (!isLoggedIn) {
             window.location.href = "/login";
+            return
+
         } else {
             window.location.href = "/load";
         }

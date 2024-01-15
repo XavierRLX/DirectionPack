@@ -19,13 +19,13 @@ body {
   height: 100%;
   width: 100%;
   letter-spacing: 1px;
+  cursor: default;
 }
 
 /* header */
-
 header {
   background-color: var(--cor-principal);
-  padding: 10px;
+  padding: 0.5em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,9 +35,32 @@ header h1 {
   color: var(--cor-secundaria);
 }
 header p {
-  margin-right: 2em;
   font-size: 1.3em;
   color: var(--cor-texto2);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav img {
+  width: 24px;
+  height: 24px;
+  margin: 0 1.4em 0 1em ;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+/* Main */
+.container {
+  position: relative;
+}
+main section {
+  padding: 10px;
+}
+main img {
+  width: 45%;
 }
 
 footer {
