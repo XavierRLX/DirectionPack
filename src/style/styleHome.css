@@ -73,11 +73,8 @@ main section input {
 main img {
   width: 35%;
 }
-main section:nth-child(2){
-  transform: rotate(180deg);
-}
-main section:nth-child(3) {
-  margin-top: -425px;
+
+main section:nth-child(2) {
   background-color: var(--cor-principal);
   height: 1000px;
 }
