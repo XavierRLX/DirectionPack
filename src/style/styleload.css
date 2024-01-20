@@ -11,7 +11,7 @@
       body {
           height: 100%;
           width: 100%;
-          background-color: #58c1eb;
+          background-color: #48B2D5;
       }
 
       .centered-div {
@@ -23,15 +23,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #58c1eb;
+        background-color: #48B2D5;
       }
       h1 {
-        color: #e9c422;
+        color: #F5B200;
         letter-spacing: 2px;
     }
     .loading-text {
         font-size: 24px;
-        color: #e9c422;
+        color: #F5B200;
         letter-spacing: 2px;
         animation: pulse 1.2s infinite;
     }
