@@ -56,24 +56,51 @@ header nav img {
 .background {
   position: relative;
   width: 100%;
-  height: 100vh; /* 100% da altura da viewport */
-  overflow: hidden; /* Garante que a imagem não ultrapasse os limites da <main> */
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
-  
 }
 
 .background img {
   width: 90%;
   height: 90%;
-  object-fit: cover; /* Garante que a imagem cubra totalmente a <main> */
+  object-fit: cover;
 }
 
 section article {
-  width: 250px;
-  height: 300px;
   padding: 1em;
-  background-color: #F5B200;
-  margin: 10px;
+  background-color: #f5b400;
+  position: absolute;
+  width: 15%;
+  height: 10%;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+section article div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+section article div input {
+  margin: 5px 0 0 0;
+  width: 50%;
+  height: 35px;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0 5px 0 5px;
+  color: #000;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 800;
 }
 
 /* FOOTER */
