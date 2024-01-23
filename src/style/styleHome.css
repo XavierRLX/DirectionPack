@@ -114,7 +114,6 @@ section article div input {
 main .zipCode {
   background-color: #48B2D5;
   height: 200px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
