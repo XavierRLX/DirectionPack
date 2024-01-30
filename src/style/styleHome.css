@@ -50,8 +50,8 @@ header nav {
 }
 
 header nav img {
-  width: 2vw; 
-  height: 2vw; 
+  width: 25px; 
+  height: 25px; 
   margin: 0 1.4vw 0 1vw; 
   filter: invert(100%);
   cursor: pointer;
@@ -68,7 +68,7 @@ header nav img {
 }
 
 .background img {
-  width: 86%;
+  width: 170vh;
   height: 100%;
   object-fit: cover;
 }
@@ -130,7 +130,6 @@ main .zipCode {
   padding: 2em;
 }
 
-/* MAIN zipCode info */
 
 .ZPInfo{
   margin-top: 5em;
@@ -140,9 +139,12 @@ main .zipCode {
   color: var(--cor-texto2);
   font-size: 1.3em;
   padding: 1em;
-
 }
+
 /* MAIN endress */
+#InlinezipCode {
+  display: none;
+}
 
 h2 {
   margin-top: 8em;

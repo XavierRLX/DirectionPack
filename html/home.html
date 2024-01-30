@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <h1>Direction Pack</h1>
+        <h1 translate="no">Direction Pack</h1>
         <nav>
-        <p id="welcomeMessage">@user</p>
+        <p translate="no" id="welcomeMessage">@user</p>
         <img id="logoutButton" title="Logout" src="assets/img/sair.png" alt="sair">
         </nav>
     </header>
@@ -21,8 +21,9 @@
             <img src="assets/img/drawkit-transport-scene-5-removebg.png" alt="backgroundImage">
             <article class="writeZipeCode">
                 <div>
-                    <p>Write your zip code</p>
+                    <p>Write your zip code:</p>
                     <input type="text">
+                    <button id="search"> ok </button>
                 </div>
             </article>
             <div class="ondas" style="overflow: hidden;">
@@ -48,15 +49,17 @@
                        ZIP Codes are also commonly used in demographic analysis, marketing, and various other applications where regional data is essential.</p>
             </article>
             <span class="br"></span>
-            <h2>Your address has been found !</h2>
-            <article class="endressZipCode">
-                <div>
-                    <img src="assets/img/placeholderG.png" alt="placeholder">
-                </div>
-                <div class="endress">
-                    <p>O pesquisado endereço é do estado <span id="state">@estado</span>, da cidade <span id="city">@cidade</span>, localizada na Rua <span id="street">@rua</span>   </p>
-                </div>
-            </article>
+            <div id="InlinezipCode">
+                <h2>Your address has been found !</h2>
+                <article class="endressZipCode">
+                    <div>
+                        <img src="assets/img/placeholderG.png" alt="placeholder">
+                    </div>
+                    <div class="endress">
+                        <p>Your zip code is in the state @state, in the city @cidade, located on Rua @rua</p>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
     <footer>
