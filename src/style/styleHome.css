@@ -164,7 +164,9 @@ main .zipCode {
 
 /* MAIN endress */
 #InlinezipCode {
-  /* display: none; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2 {
