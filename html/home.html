@@ -18,13 +18,15 @@
     </header>
     <main>
         <section class="background">
-            <img src="assets/img/drawkit-transport-scene-5-removebg.png" alt="backgroundImage">
+            <img class="imgG" src="assets/img/drawkit-transport-scene-5-removebg.png" alt="backgroundImage">
             <article class="writeZipeCode">
+                <p>Write your zip code:</p>
                 <div>
-                    <p>Write your zip code:</p>
-                    <input type="text">
-                    <button id="search"> ok </button>
+                    <input id="zipCodeText" type="text" onchange="checkZipCode()">
+                    <button id="btnsearch"> OK </button>
                 </div>
+                <img id="brimg" src="assets/img/br.png" alt="">
+                <img id="euaimg" src="assets/img/eua.png" alt="">
             </article>
             <div class="ondas" style="overflow: hidden;">
                 <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +58,10 @@
                         <img src="assets/img/placeholderG.png" alt="placeholder">
                     </div>
                     <div class="endress">
-                        <p>Your zip code is in the state @state, in the city @cidade, located on Rua @rua</p>
+                        <p>Your zip code is in the state 
+                        <span id="state">@state</span>, in the city 
+                        <span id="city">@city</span>, located on street 
+                        <span id="street">@street</span></p>
                     </div>
                 </article>
             </div>
@@ -91,8 +96,7 @@
         // Redirecione para a página de login
         window.location.href = "/load";
     });
-
-
-
 </script>
+<script src="javaScript/zipCode.js"></script>
+<script src="javaScript/OpenModal.js"></script>
 </html> 

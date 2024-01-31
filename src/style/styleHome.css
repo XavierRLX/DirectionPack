@@ -11,6 +11,9 @@
 .txtAlg {
   text-align: center;
 }
+.flex {
+  display: flex;
+}
 
 * {
   margin: 0;
@@ -67,7 +70,7 @@ header nav img {
   background-color: #f5b40015;
 }
 
-.background img {
+.background .imgG {
   width: 170vh;
   height: 100%;
   object-fit: cover;
@@ -81,27 +84,31 @@ section .writeZipeCode {
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-  box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0px 5px 15px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.writeZipeCode p {
+  color: var(--cor-texto2);
+  margin-top: 20px;
 }
 
 .background article div {
   display: flex;
-  flex-direction: column;
   height: 100%;
   width: 100%;
-  align-items: center;
   justify-content: center;
-  align-content: center;
   color: var(--cor-texto2);
   
 }
 .background article div input {
+  outline: none;
   margin: 5px 0 0 0;
   width: 50%;
-  height: 2.5em;
-  border-radius: 5px;
+  height: 35px;
+  border-radius: 5px 0 0 5px;
   border-style: none;
   padding: 0 1.24em 0 1.24em;
   color: #000;
@@ -109,6 +116,20 @@ section .writeZipeCode {
   text-align: center;
 }
 
+.background article div #btnsearch {
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 5px 0 0 0;
+  padding: 2px;
+  border-radius: 0 5px 5px 0 ;
+  background-color: var(--cor-principal);
+  color: var(--cor-texto2);
+}
+
+#euaimg, #brimg {
+  display: none;
+}
 .br{
   margin-top: 10em;
   width: 100%;
@@ -143,7 +164,7 @@ main .zipCode {
 
 /* MAIN endress */
 #InlinezipCode {
-  display: none;
+  /* display: none; */
 }
 
 h2 {
