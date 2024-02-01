@@ -22,11 +22,9 @@
             <article class="writeZipeCode">
                 <p>Write your zip code:</p>
                 <div>
-                    <input id="zipCodeText" type="text" onchange="checkZipCode()">
-                    <button id="btnsearch"> OK </button>
+                    <input id="zipCodeText" type="text" maxlength="8" oninput="validateZipCode()"  >
+                    <button onclick="checkZipCode()" id="btnsearch"> OK </button>
                 </div>
-                <img id="brimg" src="assets/img/br.png" alt="">
-                <img id="euaimg" src="assets/img/eua.png" alt="">
             </article>
             <div class="ondas" style="overflow: hidden;">
                 <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"
@@ -52,16 +50,21 @@
             </article>
             <span class="br"></span>
             <div id="InlinezipCode">
-                <h2>Your address has been found !</h2>
+                <h2 class="txtAlg">Your address has been found !</h2>
                 <article class="endressZipCode">
                     <div>
                         <img src="assets/img/placeholderG.png" alt="placeholder">
                     </div>
-                    <div class="endress">
-                        <p>Your zip code is in the state 
-                        <span id="state">@state</span>, in the city 
-                        <span id="city">@city</span>, located on street 
-                        <span id="street">@street</span></p>
+                        <div class="endress">
+                            <div>
+                                <p>State: <span id="state">Florida</span></p>
+                                <p>City: <span id="city">Miami</span> </p>
+                                <p>Street: <span id="street">Green Street</span></p>
+                            </div>
+                        </div>
+                    <div>
+                        <img id="euaimgG" src="assets/img/euaG.png" alt="">
+                        <img id="brimgG" src="assets/img/brG.png" alt="">
                     </div>
                 </article>
             </div>

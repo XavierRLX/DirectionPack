@@ -1,26 +1,47 @@
+
+const imgBr = document.getElementById('brimgG');
+const imgEua = document.getElementById('euaimgG');
+
+
+function validateZipCode() {
+    const inputElement = document.getElementById('zipCodeText');
+    
+    inputElement.value = inputElement.value.replace(/\D/g, '').slice(0, 8);
+  }
+
+
 function checkZipCode() {
     const zipCode = document.getElementById("zipCodeText").value;
-  
+
+    
+
     // Verifica se o CEP é válido para o Brasil
     if (zipCode.length === 8 && zipCode.match(/^[0-9]{8}$/)) {
-      document.getElementById("brimg").style.display = "inline";
-      document.getElementById("euaimg").style.display = "none";
+
+      imgBr.style.display = "inline";
+      imgEua.style.display = "none";
+      
+      document.getElementById("InlinezipCode").style.display = "inline" ;
+
       fetchBrazilianData(zipCode);
     }
   
     // Verifica se o CEP é válido para os EUA
     else if (zipCode.length === 5 && zipCode.match(/^[0-9]{5}$/)) {
-      document.getElementById("brimg").style.display = "none";
-      document.getElementById("euaimg").style.display = "inline";
+        imgBr.style.display = "none";
+        imgEua.style.display = "inline";
+
+      document.getElementById("InlinezipCode").style.display = "inline" ;
+
       fetchUSData(zipCode);
     }
   
     // Se o CEP for inválido, esconde as duas imagens
     else {
-      document.getElementById("brimg").style.display = "none";
-      document.getElementById("euaimg").style.display = "none";
+        imgBr.style.display = "none";
+        imgEua.style.display = "none";
     //   openModal(`Invalid zip code format.`);
-    alert("error")
+    alert("error") ;
     }
   }
   
@@ -75,7 +96,7 @@ function fetchUSData(zipCode) {
             updateAddressFields(data.state, data.city, data.street);
         })
         .catch(error => {
-            // openModal("Error fetching data from the API.");
+            alert("error") ;
         });
 }
 
