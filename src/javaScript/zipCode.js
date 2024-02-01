@@ -1,6 +1,7 @@
 
 const imgBr = document.getElementById('brimgG');
 const imgEua = document.getElementById('euaimgG');
+const zipCodeResult = document.getElementById('InlinezipCode');
 
 
 function validateZipCode() {
@@ -13,7 +14,7 @@ function validateZipCode() {
 function checkZipCode() {
     const zipCode = document.getElementById("zipCodeText").value;
 
-    
+    zipCodeResult.style.display = "none" ;
 
     // Verifica se o CEP é válido para o Brasil
     if (zipCode.length === 8 && zipCode.match(/^[0-9]{8}$/)) {
@@ -21,8 +22,6 @@ function checkZipCode() {
       imgBr.style.display = "inline";
       imgEua.style.display = "none";
       
-      document.getElementById("InlinezipCode").style.display = "inline" ;
-
       fetchBrazilianData(zipCode);
     }
   
@@ -31,7 +30,7 @@ function checkZipCode() {
         imgBr.style.display = "none";
         imgEua.style.display = "inline";
 
-      document.getElementById("InlinezipCode").style.display = "inline" ;
+        zipCodeResult.style.display = "inline" ;
 
       fetchUSData(zipCode);
     }
@@ -73,14 +72,17 @@ function fetchBrazilianData(zipCode) {
         .then(data => {
             // Check if the returned data contains an error
             if (data.erro) {
-                // openModal("CEP not found in the database.");
+                alert("not found") ;
             } else {
                 // Update the UI with the received data
                 updateAddressFields(data.uf, data.localidade, data.logradouro);
+                zipCodeResult.style.display = "inline" ;
+                zipCodeResult.scrollIntoView({behavior: "smooth"})
+
             }
         })
         .catch(error => {
-            // openModal("Error fetching data from the API.");
+            alert("error API") ;
         });
 }
 
@@ -96,7 +98,7 @@ function fetchUSData(zipCode) {
             updateAddressFields(data.state, data.city, data.street);
         })
         .catch(error => {
-            alert("error") ;
+            alert("") ;
         });
 }
 
