@@ -75,7 +75,7 @@ function fetchBrazilianData(zipCode) {
                 alert("not found") ;
             } else {
                 // Update the UI with the received data
-                updateAddressFields(data.uf, data.localidade, data.logradouro);
+                updateAddressFields(data.uf, data.ddd, data.localidade, data.bairro, data.logradouro);
                 zipCodeResult.style.display = "inline" ;
                 zipCodeResult.scrollIntoView({behavior: "smooth"})
 
@@ -95,16 +95,18 @@ function fetchUSData(zipCode) {
         .then(response => response.json())
         .then(data => {
             // Update the UI with the received data
-            updateAddressFields(data.state, data.city, data.street);
+            updateAddressFields(data.state, data.code, data.city, data.street);
         })
         .catch(error => {
             alert("") ;
         });
 }
 
-function updateAddressFields(state, city, street) {
+function updateAddressFields(state, code, city, neighborhood, street) {
     // Update the address fields in your UI
     document.getElementById("state").innerText = state;
+    document.getElementById("stateCode").innerText = code;
     document.getElementById("city").innerText = city;
+    document.getElementById("neighborhood").innerText = neighborhood;
     document.getElementById("street").innerText = street;
 }
