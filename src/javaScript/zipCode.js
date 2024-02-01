@@ -3,7 +3,6 @@ const imgBr = document.getElementById('brimgG');
 const imgEua = document.getElementById('euaimgG');
 const zipCodeResult = document.getElementById('InlinezipCode');
 
-
 function validateZipCode() {
     const inputElement = document.getElementById('zipCodeText');
     
@@ -63,6 +62,7 @@ function checkZipCode() {
 //     }
 // }
 
+
 function fetchBrazilianData(zipCode) {
     // Perform API request for Brazilian zip code
     const apiUrl = `https://viacep.com.br/ws/${zipCode}/json/`;
@@ -72,35 +72,36 @@ function fetchBrazilianData(zipCode) {
         .then(data => {
             // Check if the returned data contains an error
             if (data.erro) {
-                alert("not found") ;
+                openModal('not found');
             } else {
                 // Update the UI with the received data
                 updateAddressFields(data.uf, data.ddd, data.localidade, data.bairro, data.logradouro);
-                zipCodeResult.style.display = "inline" ;
-                zipCodeResult.scrollIntoView({behavior: "smooth"})
-
+                zipCodeResult.style.display = "inline";
+                zipCodeResult.scrollIntoView({ behavior: "smooth" });
             }
         })
         .catch(error => {
-            alert("error API") ;
+            // Use console.error para identificar possíveis problemas
+            openModal('error API');
         });
 }
 
-function fetchUSData(zipCode) {
-    // Perform API request for USA zip code
-    // Replace the placeholder URL with the actual API endpoint
-    const apiUrl = `https://api.example.com/usa/${zipCode}`;
+
+// function fetchUSData(zipCode) {
+//     // Perform API request for USA zip code
+//     // Replace the placeholder URL with the actual API endpoint
+//     const apiUrl = `https://api.example.com/usa/${zipCode}`;
     
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Update the UI with the received data
-            updateAddressFields(data.state, data.code, data.city, data.street);
-        })
-        .catch(error => {
-            alert("") ;
-        });
-}
+//     fetch(apiUrl)
+//         .then(response => response.json())
+//         .then(data => {
+//             // Update the UI with the received data
+//             updateAddressFields(data.state, data.code, data.city, data.street);
+//         })
+//         .catch(error => {
+//             alert("") ;
+//         });
+// }
 
 function updateAddressFields(state, code, city, neighborhood, street) {
     // Update the address fields in your UI

@@ -1,7 +1,7 @@
 // Function to display a modal with the given message
 function openModal(message) {
     const modal = document.getElementById("myModal");
-    modal.style.display = "block";
+    modal.style.display = "inline";
     const alertModal = document.getElementById("avisoForm");
     alertModal.innerText = message;
 }

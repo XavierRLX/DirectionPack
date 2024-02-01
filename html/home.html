@@ -50,7 +50,7 @@
             </article>
             <span class="br"></span>
             <div id="InlinezipCode">
-                <h2 class="txtAlg">Your address has been found !</h2>
+                <h2 id="errTextZipCode" class="txtAlg">Your address has been found !</h2>
                 <article class="endressZipCode">
                     <div>
                         <img src="assets/img/placeholderG.png" alt="placeholder">
@@ -74,6 +74,15 @@
     <footer>
         <p>All rights reserved for Direction Pack 2024</p>
     </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content topB">
+            <h2 id="hModal">Alert!</h2>
+            <p id="avisoForm">Digite o código de verificação enviado:</p>
+            <div><button id="btnModal" onclick="closeModal()">OK</button></div>
+        </div>
+    </div>
+    
 </body>
 
 <script>
