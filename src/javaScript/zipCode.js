@@ -11,6 +11,7 @@ function validateZipCode() {
 
 
 function checkZipCode() {
+    
     const zipCode = document.getElementById("zipCodeText").value;
 
     zipCodeResult.style.display = "none" ;

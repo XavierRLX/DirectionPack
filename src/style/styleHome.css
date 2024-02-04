@@ -172,7 +172,7 @@ main .zipCode {
   width: 100%;
 }
 
-h2 {
+.h2 {
   margin-top: 8em;
   color: var(--cor-texto2);
 }

@@ -7,10 +7,11 @@ function openModal(message) {
 }
 
 // Function to close the modal
+
 function closeModal() {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
 
 // Function to display an error message, and highlight the corresponding input element
 function showError(inputElement, message) {
