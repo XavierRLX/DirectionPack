@@ -89,6 +89,7 @@ section .writeZipeCode {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .writeZipeCode p {
   color: var(--cor-texto2);
@@ -141,9 +142,6 @@ section .writeZipeCode {
 
 /* MAIN zipCode  */
 
- .ondas {
-  width: 100%;
-}
 
 main .zipCode {
   background-color: #48B2D5;

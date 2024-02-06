@@ -3,6 +3,8 @@ const imgBr = document.getElementById('brimgG');
 const imgEua = document.getElementById('euaimgG');
 const zipCodeResult = document.getElementById('InlinezipCode');
 const zipCodeInput = document.getElementById('zipCodeText');
+const btnsearch = document.getElementById('btnsearch');
+
 
 // Event listener for checking the zip code when "Enter" key is pressed
 zipCodeInput.addEventListener('keyup', function(event) {
@@ -37,21 +39,29 @@ function checkZipCode() {
 function fetchBrazilianData(zipCode) {
     const apiUrl = `https://viacep.com.br/ws/${zipCode}/json/`;
     
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            if (data.erro) {
-                openModal('Address not found');
-            } else {
-                updateAddressFields(data.uf, data.ddd, data.localidade, data.bairro, data.logradouro);
-                zipCodeResult.style.display = 'inline';
-                zipCodeResult.scrollIntoView({ behavior: 'smooth' });
-            }
-        })
-        .catch(error => {
-            openModal('Error fetching address data');
-        });
+    btnsearch.style.animation = 'pulse .5s infinite alternate';
+
+    setTimeout(() => {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    openModal('Address not found');
+                } else {
+                    updateAddressFields(data.uf, data.ddd, data.localidade, data.bairro, data.logradouro);
+                    zipCodeResult.style.display = 'inline';
+                    zipCodeResult.scrollIntoView({ behavior: 'smooth' });
+                }
+            })
+            .catch(error => {
+                openModal('Error fetching address data');
+            })
+            .finally(() => {
+                btnsearch.style.animation = '';
+            });
+    }, 2000);
 }
+
 
 // Function to update the address fields in the UI
 function updateAddressFields(state, code, city, neighborhood, street) {
