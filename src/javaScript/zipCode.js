@@ -68,3 +68,4 @@ function hideImages() {
     imgEua.style.display = 'none';
 }
 
+
