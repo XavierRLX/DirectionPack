@@ -4,6 +4,7 @@ const imgEua = document.getElementById('euaimgG');
 const zipCodeResult = document.getElementById('InlinezipCode');
 const zipCodeInput = document.getElementById('zipCodeText');
 const btnsearch = document.getElementById('btnsearch');
+const searchAgain = document.getElementById('searchAgain');
 
 
 // Event listener for checking the zip code when "Enter" key is pressed
@@ -78,4 +79,14 @@ function hideImages() {
     imgEua.style.display = 'none';
 }
 
+  searchAgain.addEventListener('click', () => {
+      zipCodeInput.value = '' ;
+
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth' 
+      });
+      
+      zipCodeResult.style.display = 'none'
+  });
 

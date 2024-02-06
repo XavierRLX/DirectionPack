@@ -202,6 +202,17 @@ main .zipCode {
   display: none;
 }
 
+#searchAgain{
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto2);
+}
+#searchAgain:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}
 
 /* FOOTER */
 footer {
