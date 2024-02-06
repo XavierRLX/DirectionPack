@@ -3,6 +3,14 @@ const imgBr = document.getElementById('brimgG');
 const imgEua = document.getElementById('euaimgG');
 const zipCodeResult = document.getElementById('InlinezipCode');
 
+
+
+document.getElementById("zipCodeText").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        checkZipCode();
+    }
+  });
+
 function validateZipCode() {
     const inputElement = document.getElementById('zipCodeText');
     
