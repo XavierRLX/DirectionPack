@@ -141,8 +141,6 @@ section .writeZipeCode {
 }
 
 /* MAIN zipCode  */
-
-
 main .zipCode {
   background-color: #48B2D5;
   display: flex;
@@ -151,11 +149,16 @@ main .zipCode {
   padding: 2em;
 }
 
-
 .ZPInfo{
   margin-top: 5em;
   width: 80%;
 }
+
+
+.ZPInfo p {
+  text-align: justify ;
+}
+
 .txtAlg, .pAlg {
   color: var(--cor-texto2);
   font-size: 1.3em;
@@ -228,19 +231,19 @@ footer {
 @media screen and (max-width: 548px) {
   /* header */
 header {
-  padding: 5px;
+  padding: 10px;
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 header p {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 header nav img {
-  width: 12px; 
-  height: 12px; 
+  width: 13px; 
+  height: 13px; 
   margin: 2px 2px 0 3px; 
 }
 
@@ -258,55 +261,63 @@ section .writeZipeCode {
   width: 210px;
   height: 100px;
 }
-.writeZipeCode p {
-  margin-top: 20px;
+
+
+/* MAIN zipCode  */
+main .zipCode {
+  padding: 0 0 1em 0;
+}
+.ZPInfo h1 {
+  font-size: 1.3em;
+}
+.ZPInfo{
+  margin-top: 3em;
+  width: 90%;
+}
+.txtAlg, .pAlg {
+  font-size: 1em;
+  padding: 1;
 }
 
-.background article div {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  color: var(--cor-texto2);
-  
-}
-.background article div input {
-  outline: none;
-  margin: 5px 0 0 0;
-  width: 50%;
-  height: 35px;
-  border-radius: 5px 0 0 5px;
-  border-style: none;
-  padding: 0 1.24em 0 1.24em;
-  color: #000;
-  letter-spacing: 0.5em;
+/* MAIN endress */
+#InlinezipCode {
+  display: block;
+  flex-direction: column;
 }
 
-.background article div #btnsearch {
-  width: 35px;
-  height: 35px;
-  border: none;
-  margin: 5px 0 0 0;
-  padding: 2px;
-  border-radius: 0 5px 5px 0 ;
+.h2 {
+  margin-top: 5em;
+}
+.endressZipCode {
+  flex-direction: column;
+  margin: 2em 0 5em 0;
+}
+
+.mgZipcode {
+  margin: 5px 0  ;
+}
+
+.endressZipCode img {
+  width: 100px;
+}
+
+.endress {
+  width: 350px;
+  border-radius: 5px;
   background-color: var(--cor-principal);
   color: var(--cor-texto2);
-  cursor: pointer;
+  box-shadow: 0px 0px 30px #0000002d;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
 }
-
-.background article div #btnsearch:hover{
-  filter: brightness(70%);
+#brimgG {
+  display: inline;
 }
-
-
-.br{
-  margin-top: 10em;
-  width: 100%;
-  height: 2px;
-  background-color: var(--cor-secundaria);
-}
-
-
+/* #euaimg, #brimg, #brimgG, #euaimgG, #InlinezipCode  {
+  display: none;
+} */
 
 
 
