@@ -281,7 +281,6 @@ main .zipCode {
 
 /* MAIN endress */
 #InlinezipCode {
-  display: block;
   flex-direction: column;
 }
 
