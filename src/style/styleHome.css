@@ -79,8 +79,8 @@ header nav img {
 section .writeZipeCode {
   background-color: #f5b400;
   position: absolute;
-  width: 15%;
-  height: 20%;
+  width: 300px;
+  height: 120px;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
@@ -225,7 +225,89 @@ footer {
   line-height: 50px; 
 }
 
+@media screen and (max-width: 548px) {
+  /* header */
+header {
+  padding: 5px;
+}
 
-@media screen and (max-width: 768px) {
+header h1 {
+  font-size: 1em;
+}
+header p {
+  font-size: 1em;
+}
+
+header nav img {
+  width: 12px; 
+  height: 12px; 
+  margin: 2px 2px 0 3px; 
+}
+
+/* Main background */
+.background {
+  height: 40vh;
+}
+
+.background .imgG {
+  width: 100vh;
+  height: 130%;
+}
+
+section .writeZipeCode {
+  width: 210px;
+  height: 100px;
+}
+.writeZipeCode p {
+  margin-top: 20px;
+}
+
+.background article div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  color: var(--cor-texto2);
+  
+}
+.background article div input {
+  outline: none;
+  margin: 5px 0 0 0;
+  width: 50%;
+  height: 35px;
+  border-radius: 5px 0 0 5px;
+  border-style: none;
+  padding: 0 1.24em 0 1.24em;
+  color: #000;
+  letter-spacing: 0.5em;
+}
+
+.background article div #btnsearch {
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 5px 0 0 0;
+  padding: 2px;
+  border-radius: 0 5px 5px 0 ;
+  background-color: var(--cor-principal);
+  color: var(--cor-texto2);
+  cursor: pointer;
+}
+
+.background article div #btnsearch:hover{
+  filter: brightness(70%);
+}
+
+
+.br{
+  margin-top: 10em;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-secundaria);
+}
+
+
+
+
 
 }
