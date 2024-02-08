@@ -18,7 +18,7 @@ const transport = nodemailer.createTransport({
     pass: 'bnaeauszgluontqb',
   },
   tls: {
-    rejectUnauthorized: false, // ou true, dependendo da sua configuração
+    rejectUnauthorized: false,  
   },
 });
 
