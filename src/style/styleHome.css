@@ -30,6 +30,14 @@ body {
   cursor: default;
 }
 
+a {
+  text-decoration: none;
+  color: var(--cor-principal);
+}
+ a:hover {
+  color: var(--cor-secundaria);
+ }
+
 /* header */
 header {
   background-color:var(--cor-principal);
