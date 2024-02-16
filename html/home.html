@@ -78,7 +78,6 @@
 </div>
 
 <script>
-    // Verifique se o usuário está logado
     const isLoggedIn = localStorage.getItem("isLoggedIn");
 
     if (!isLoggedIn) {
@@ -91,14 +90,11 @@
         }
     }
 
-    // Adicione um evento de clique ao botão "sair"
     document.getElementById("logoutButton").addEventListener("click", function() {
-        // Remova as informações de login do localStorage
         
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("loggedInFullName");
 
-        // Redirecione para a página de login
         window.location.href = "/load";
     });
 </script>
