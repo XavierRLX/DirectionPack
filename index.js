@@ -21,7 +21,7 @@ const routes = [
   { path: '/', file: 'load.html' },
   { path: '/load', file: 'load.html' },
   { path: '/login', file: 'paglogin.html' },
-  { path: '/home', file: 'home.html' },
+  { path: '/home',  file: 'home.html' },
 ];
 
 // Itera sobre o array de rotas e define as rotas dinamicamente

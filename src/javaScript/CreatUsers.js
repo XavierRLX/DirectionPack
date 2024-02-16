@@ -19,7 +19,7 @@ function saveUsersToLocalStorage() {
 
 // Function to save a new user's data
 function saveUser() {
-  if (validateForm()) {
+  if (validateForm(true)) {
     // Retrieve input values from the form and trim them
     const nameInput = document.getElementById("inputNameMainDois").value.trim();
     const lastnameInput = document.getElementById("inputLastnameMainDois").value.trim();
