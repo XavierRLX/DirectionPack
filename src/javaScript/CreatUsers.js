@@ -50,7 +50,7 @@ function saveUser() {
     // Save the updated users array to the localStorage
     saveUsersToLocalStorage();
 
-    sendEmailSaveUser();
+    sendEmailSaveUser(nameInput, lastnameInput);
     
     openModal(`Successfully created user !`);
     userSaveModal();

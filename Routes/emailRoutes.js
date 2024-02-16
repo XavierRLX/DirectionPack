@@ -52,7 +52,7 @@ app.post('/send-email-welcome', async (req, res, next) => {
     const EmailWelcome = fs.readFileSync(__dirname + '/ModelsEmails/modelEmailWelcome.html', 'utf-8');
     const personalizedEmailContent = EmailWelcome.replace('{{NOME}}', nome).replace('{{SOBRENOME}}', sobrenome);
 
-    await sendEmail(toEmail, 'Direction Pack - Bem-vindo', personalizedEmailContent);
+    await sendEmail(toEmail, 'Direction Pack - Welcome', personalizedEmailContent);
 
     res.send('Enviado');
   } catch (err) {
